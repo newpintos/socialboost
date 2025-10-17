@@ -17,7 +17,9 @@
       "Bash(git remote add:*)",
       "Bash(git push:*)",
       "Bash(git remote:*)",
-      "Bash(SUPABASE_ACCESS_TOKEN=sbp_7f633fa75aa45bf69daf74894324ae9b0c08305d npx supabase:*)"
+      "Bash(SUPABASE_ACCESS_TOKEN=sbp_7f633fa75aa45bf69daf74894324ae9b0c08305d npx supabase:*)",
+      "Bash(pnpm build:*)",
+      "Bash(cat:*)"
     ],
     "deny": [],
     "ask": []

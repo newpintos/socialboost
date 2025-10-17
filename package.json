@@ -16,8 +16,10 @@
     "eslint": "^8.56.0",
     "eslint-config-next": "14.2.0",
     "eslint-config-prettier": "^9.1.0",
+    "nanoid": "^5.1.6",
     "prettier": "^3.2.5",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "uuid": "^9.0.1"
   },
   "engines": {
     "node": ">=18.0.0",

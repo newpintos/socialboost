@@ -1,3 +1,5 @@
+const { randomBytes } = require('crypto');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -10,10 +12,15 @@ const nextConfig = {
     ],
   },
   transpilePackages: ['@socialboost/shared'],
-  webpack: (config) => {
-    // Ensure CSS is processed
-    config.resolve.extensions.push('.css');
-    return config;
+  eslint: {
+    ignoreDuringBuilds: false,
+  },
+  typescript: {
+    ignoreBuildErrors: false,
+  },
+  generateBuildId: async () => {
+    // Use crypto to generate a build ID instead of uuid
+    return randomBytes(16).toString('hex');
   },
 };
 

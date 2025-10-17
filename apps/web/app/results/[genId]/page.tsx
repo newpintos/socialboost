@@ -11,6 +11,9 @@ import Button from '@/components/Button';
 import { formatDate } from '@/lib/utils';
 import type { Generation } from '@socialboost/shared';
 
+export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
+
 export default function ResultsPage() {
   const params = useParams();
   const router = useRouter();
@@ -31,11 +34,12 @@ export default function ResultsPage() {
         .single();
 
       if (updated) {
-        console.log('Polling update:', updated.status);
-        setGeneration(updated);
+        const typedGeneration = updated as Generation;
+        console.log('Polling update:', typedGeneration.status);
+        setGeneration(typedGeneration);
 
         // Stop polling if finished
-        if (updated.status === 'succeeded' || updated.status === 'failed') {
+        if (typedGeneration.status === 'succeeded' || typedGeneration.status === 'failed') {
           if (pollInterval) clearInterval(pollInterval);
         }
       }
