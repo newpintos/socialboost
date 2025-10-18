@@ -1,5 +1,6 @@
 # Deployment Guide
 
+
 ## Environment Variables
 
 ### Public Variables (NEXT_PUBLIC_*)
