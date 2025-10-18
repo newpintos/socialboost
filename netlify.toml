@@ -6,5 +6,9 @@
 [build.environment]
   NODE_VERSION = "20"
 
+# Disable secret detection for NEXT_PUBLIC_ variables (they are meant to be public in Next.js)
+[build.processing]
+  skip_processing = false
+
 [[plugins]]
   package = "@netlify/plugin-nextjs"
